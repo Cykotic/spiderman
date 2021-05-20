@@ -79,7 +79,7 @@ module.exports = {
 
         /* checking the max time */
         if (time < 10 || time > 1800) return message.channel.send(new MessageEmbed()
-          .setTitle("❌ Error | **Max Time \`[10 - 1800]\` **")
+          .setTitle("❌ Error | **Max Time \`<10 - 1800>\` **")
           .setColor(0xff1100)
           .setTimestamp()
           .setFooter(message.author.tag, message.member.user.displayAvatarURL())

@@ -22,8 +22,8 @@ function formatDate(date) {
 module.exports = {
     name: "add-days",
     description: "add time to a user",
-    usage: `${prefix}add-days [Time]`,
-    example: `${prefix}add-days 5`,
+    usage: `${prefix}add-days <user> [Time]`,
+    example: `${prefix}add-days @timmy 5d`,
     category: "⚙️ | utility",
     memberpermissions: "ADMINISTRATOR",
     run: async (client, message, args, pool) => {
@@ -58,6 +58,13 @@ module.exports = {
                     var expired = (expires <= new Date());
                     var end_date = (expired === true ? addDays(new Date(), days) : addDays(expires, days));
                     query = `update users set expires='${formatDate(end_date)}' where discordid='${target.id}'`;
+                    message.channel.send(
+                        {
+                            embed: {
+                                description: "Timed Added!",
+                                color: 0xff1100,
+                            }
+                        }).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
                 }
                 connection.query(query);
             });

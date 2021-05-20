@@ -23,7 +23,12 @@ module.exports = {
                 var verified = rows[0].discordverified;
         
                 if (verified === 0)
-                  return message.reply("you have not verified your Discord account with the bot! :clown:").then(msg => msg.delete({ timeout: 15000 }));
+                  return message.channel.send(new MessageEmbed()
+                  .setTitle("❌ Error | you have not verified your Discord account with the bot!!")
+                  .setColor(0xff1100)
+                  .setTimestamp()
+                  .setFooter(message.author.tag, message.member.user.displayAvatarURL())
+                  ).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
 
                 var name = rows[0].name;
                 var plan = rows[0].plan;

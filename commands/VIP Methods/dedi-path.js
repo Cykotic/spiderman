@@ -79,7 +79,7 @@ module.exports = {
         ).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
 
         /* checking the deletes the message after it get's sent  */
-        // await message.delete()
+        await message.delete()
 
         /* sends the attack with embed */
         await util.requestAPI(address, port, time, 'DEDI-PATH');

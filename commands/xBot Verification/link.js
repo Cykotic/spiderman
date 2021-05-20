@@ -1,10 +1,12 @@
+const { MessageEmbed } = require("discord.js");
+
 function genCode(len) {
     var out = '';
-    var possible = '0123456789';
+    var possible = '0123456789ABCDEFHI';
     for (var i = 0; i < len; i++)
-      out += possible.charAt(Math.floor(Math.random() * possible.length));
+        out += possible.charAt(Math.floor(Math.random() * possible.length));
     return out;
-  }
+}
 
 module.exports = {
     name: "link",
@@ -24,8 +26,15 @@ module.exports = {
 
                 if (rows.length < 1) {
                     query = `insert into users (name, discordid, discordcode) values ('${target.username}', '${target.id}', '${unique}')`;
-                    console.log("user created, pending verification!")
-                    target.send(`Please verify your account with this one time code, expires in the next 10 minutes!\nCode: **${unique}**`);
+                    // console.log("user created, pending verification!")
+                    target.send(
+                        {
+                            embed: {
+                                title: "Please verify your account with this one time code",
+                                description: `Here's your verify code: \`${unique}\``,
+                                color: 0xff1100
+                            }
+                        })
                 }
                 else {
                     //do nothing

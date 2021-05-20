@@ -78,8 +78,8 @@ module.exports = {
         ).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
 
         /* checking the max time */
-        if (time < 10 || time > 300) return message.channel.send(new MessageEmbed()
-          .setTitle("❌ Error | **Max Time \`[10 - 300]\` **")
+        if (time < 1 || time > 300) return message.channel.send(new MessageEmbed()
+          .setTitle("❌ Error | **Max Time \`[1 - 300]\` **")
           .setColor(0xff1100)
           .setTimestamp()
           .setFooter(message.author.tag, message.member.user.displayAvatarURL())
