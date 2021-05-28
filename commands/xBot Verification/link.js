@@ -1,4 +1,6 @@
 const { MessageEmbed } = require("discord.js");
+const ee = require("../../config.json");
+const { prefix } = require("../../config.json")
 
 function genCode(len) {
     var out = '';
@@ -13,12 +15,13 @@ module.exports = {
     description: "A command which connects Discord account to the bot",
     category: "⚙️ | utility",
     run: async (client, message, args, pool) => {
-        pool.getConnection((err, connection) => {
+        pool.getConnection(async (err, connection) => {
             if (err) throw err;
 
             var target = message.author;
             var unique = genCode(8);
 
+            await message.delete()
             connection.query(`select * from users where discordid='${target.id}'`, (err, rows) => {
                 if (err) throw err;
 
@@ -31,18 +34,16 @@ module.exports = {
                         {
                             embed: {
                                 title: "Please verify your account with this one time code",
-                                description: `Here's your verify code: \`${unique}\``,
-                                color: 0xff1100
+                                description: `Here's your verify code: \`${prefix}verify ${unique}\``,
+                                color: ee.color
                             }
                         })
                 }
                 else {
-                    //do nothing
+                    // return as none
                 }
-
                 connection.query(query);
             });
-
             connection.release();
         });
     }

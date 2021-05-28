@@ -1,5 +1,5 @@
 const { prefix } = require('../../config.json')
-odule.exports = client => {
+module.exports = client => {
 
 
   console.log(`Connected to: [ ${client.user.tag} ]`)

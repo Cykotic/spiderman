@@ -13,7 +13,6 @@ const client = new Client({
 /** collection **/
 client.commands = new Collection();
 client.aliases = new Collection();
-client.cooldowns = new Collection();
 
 /** handlers **/
 ["command", "events"].forEach(handler => {

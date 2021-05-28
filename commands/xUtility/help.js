@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const ee = require("../../config.json");
 
 module.exports = {
   name: "help",
@@ -14,7 +15,7 @@ module.exports = {
       await message.delete()
       if (!command) {
         return message.channel.send(new MessageEmbed()
-        .setColor(0xff1100)
+        .setColor(ee.color)
         .setTimestamp()
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter(message.author.tag, message.member.user.displayAvatarURL())
@@ -37,7 +38,7 @@ module.exports = {
       return message.channel.send
       ( 
         new MessageEmbed()
-        .setColor(0xff1100)
+        .setColor(ee.color)
         .setDescription(info)
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter(message.author.tag, message.member.user.displayAvatarURL())
@@ -49,7 +50,7 @@ module.exports = {
       let emx = new MessageEmbed()
         .setTitle(`Here's a list of my commands:`)
         .setThumbnail(client.user.displayAvatarURL())
-        .setColor(0xff1100)
+        .setColor(ee.color)
         .setFooter(message.author.tag, message.member.user.displayAvatarURL())
         .setTimestamp();
 

