@@ -6,6 +6,7 @@ module.exports = {
   name: 'ovh-tcp',
   category: '☄️ | OVH Methods',
   description: 'start an OVH-TCP attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

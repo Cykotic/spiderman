@@ -6,6 +6,7 @@ module.exports = {
   name: 'snmp',
   category: '⚡ | Layer 4 Basic',
   description: 'start an SNMP attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

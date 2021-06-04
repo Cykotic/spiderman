@@ -6,6 +6,7 @@ module.exports = {
   name: 'ovh-sas',
   category: '☄️ | OVH Methods',
   description: 'start an OVH-SAS attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

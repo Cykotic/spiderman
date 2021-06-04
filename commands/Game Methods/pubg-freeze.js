@@ -6,6 +6,7 @@ module.exports = {
   name: 'pubg-freeze',
   category: '🎮 | Game Methods',
   description: 'start an PUBG-FREEZE attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

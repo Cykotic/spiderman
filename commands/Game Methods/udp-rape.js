@@ -6,6 +6,7 @@ module.exports = {
   name: 'udp-rape',
   category: '🎮 | Game Methods',
   description: 'start an UDP-RAPE attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

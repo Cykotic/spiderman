@@ -6,6 +6,7 @@ module.exports = {
   name: 'syn-ack',
   category: '🔥 | TCP Methods',
   description: 'start an SYN-ACK attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

@@ -6,6 +6,7 @@ module.exports = {
   name: 'udpmixhome',
   category: '⚡ | Layer 4 Basic',
   description: 'start an UDP-MIX-HOME attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

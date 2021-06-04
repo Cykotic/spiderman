@@ -6,6 +6,7 @@ module.exports = {
   name: 'apex-rcnt',
   category: '🎮 | Game Methods',
   description: 'start an APEX-RCNT attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

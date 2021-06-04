@@ -12,6 +12,7 @@ module.exports = {
     name: "info",
     description: "A command which connects Discord account to the bot",
     category: "⚙️ | utility",
+    channelOnly: true,
     run: async (client, message, args, pool) => {
         pool.getConnection(async (err, connection) => {
             if (err) throw err;

@@ -6,6 +6,7 @@ module.exports = {
   name: 'rpc',
   category: '⚡ | Layer 4 Basic',
   description: 'start an RPC attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

@@ -6,6 +6,7 @@ module.exports = {
   name: 'ovh-mix',
   category: '☄️ | OVH Methods',
   description: 'start an OVH-MIX attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client
@@ -15,7 +16,6 @@ module.exports = {
 
   run: async (client, message, args, pool) => {
 
-    
     /* getting the connection from the db made in sql by dread modified by cykotic */
     pool.getConnection((err, connection) => {
       if (err) throw err;

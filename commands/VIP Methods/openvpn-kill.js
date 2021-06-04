@@ -6,6 +6,7 @@ module.exports = {
   name: 'openvpn-kill',
   category: '💎 | VIP Methods',
   description: 'start an openvpn-kill attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

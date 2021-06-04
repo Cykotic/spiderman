@@ -6,6 +6,7 @@ module.exports = {
   name: 'plex-media',
   category: '🎮 | Game Methods',
   description: 'start an PLEX-MEDIA attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

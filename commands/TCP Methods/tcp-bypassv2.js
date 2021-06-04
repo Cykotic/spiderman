@@ -6,6 +6,7 @@ module.exports = {
   name: 'tcp-bypassv2',
   category: '🔥 | TCP Methods',
   description: 'start an TCP-BYPASSV2 attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

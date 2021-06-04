@@ -6,6 +6,7 @@ module.exports = {
   name: 'redsynv2',
   category: '❄️ | NFO Methods',
   description: 'start an REDSYNV2 attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

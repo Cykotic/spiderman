@@ -6,6 +6,7 @@ module.exports = {
   name: 'rst-psh-ack',
   category: '🔥 | TCP Methods',
   description: 'start an RST-PSH-ACK attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

@@ -6,6 +6,7 @@ module.exports = {
   name: 'qbot-udp',
   category: '✨ | Botnet Methods',
   description: 'start an qbot-udp attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

@@ -6,6 +6,7 @@ module.exports = {
   name: 'psh-fin',
   category: '🔥 | TCP Methods',
   description: 'start an PSH-FIN attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

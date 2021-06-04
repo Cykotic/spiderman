@@ -6,6 +6,7 @@ module.exports = {
   name: 'ldap',
   category: '⚡ | Layer 4 Basic',
   description: 'start an ldap attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

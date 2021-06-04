@@ -6,6 +6,7 @@ module.exports = {
   name: 'ovh-rail',
   category: '☄️ | OVH Methods',
   description: 'start an OVH-RAIL attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

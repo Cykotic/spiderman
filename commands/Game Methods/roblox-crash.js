@@ -6,6 +6,7 @@ module.exports = {
   name: 'roblox',
   category: '🎮 | Game Methods',
   description: 'start an ROBLOX-CRASH attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

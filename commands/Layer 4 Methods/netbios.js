@@ -6,6 +6,7 @@ module.exports = {
   name: 'netbios',
   category: '⚡ | Layer 4 Basic',
   description: 'start an NETBIOS attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

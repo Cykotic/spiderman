@@ -6,6 +6,7 @@ module.exports = {
   name: 'udp-bypassv2',
   category: '💎 | VIP Methods',
   description: 'start an UDP-BYPASSV2 attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

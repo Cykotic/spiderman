@@ -6,6 +6,7 @@ module.exports = {
   name: 'nfo-down',
   category: '❄️ | NFO Methods',
   description: 'start an NFO-DOWN attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

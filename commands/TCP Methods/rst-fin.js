@@ -6,6 +6,7 @@ module.exports = {
   name: 'rst-fin',
   category: '🔥 | TCP Methods',
   description: 'start an RST-FIN attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

@@ -6,6 +6,7 @@ module.exports = {
   name: 'nfo-tcp',
   category: '❄️ | NFO Methods',
   description: 'start an NFO-TCP attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

@@ -6,6 +6,7 @@ module.exports = {
   name: 'r6-ranked',
   category: '🎮 | Game Methods',
   description: 'start an R6-RANKED attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

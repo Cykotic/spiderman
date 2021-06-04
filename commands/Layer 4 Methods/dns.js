@@ -6,6 +6,7 @@ module.exports = {
   name: 'dns',
   category: '⚡ | Layer 4 Basic',
   description: 'start an DNS attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

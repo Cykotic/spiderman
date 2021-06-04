@@ -6,6 +6,7 @@ module.exports = {
   name: 'vpn-bypass',
   category: '💎 | VIP Methods',
   description: 'start an vpn-bypass attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

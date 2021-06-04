@@ -6,6 +6,7 @@ module.exports = {
   name: 'mssql',
   category: '⚡ | Layer 4 Basic',
   description: 'start an MSSQQL attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

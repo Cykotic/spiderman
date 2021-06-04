@@ -6,6 +6,7 @@ module.exports = {
   name: 'amoungus',
   category: '🎮 | Game Methods',
   description: 'start an AMOUNGUS attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

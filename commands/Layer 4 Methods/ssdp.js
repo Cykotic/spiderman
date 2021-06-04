@@ -6,6 +6,7 @@ module.exports = {
   name: 'ssdp',
   category: '⚡ | Layer 4 Basic',
   description: 'start an SSDP attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

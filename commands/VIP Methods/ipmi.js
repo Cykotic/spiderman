@@ -6,6 +6,7 @@ module.exports = {
   name: 'ipmi',
   category: '💎 | VIP Methods',
   description: 'start an ipmi attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

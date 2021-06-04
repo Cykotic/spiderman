@@ -6,6 +6,7 @@ module.exports = {
   name: 'aws',
   category: '💎 | VIP Methods',
   description: 'start an AWS attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

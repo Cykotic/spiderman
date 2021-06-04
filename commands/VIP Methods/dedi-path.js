@@ -6,6 +6,7 @@ module.exports = {
   name: 'dedi-path',
   category: '💎 | VIP Methods',
   description: 'start an DEDI-PATH attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

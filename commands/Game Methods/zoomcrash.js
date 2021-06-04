@@ -6,6 +6,7 @@ module.exports = {
   name: 'zoom-crash',
   category: '🎮 | Game Methods',
   description: 'start an ZOOM-CRASH attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

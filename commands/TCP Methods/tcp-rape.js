@@ -6,6 +6,7 @@ module.exports = {
   name: 'tcp-rape',
   category: '🔥 | TCP Methods',
   description: 'start an TCP-RAPE attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

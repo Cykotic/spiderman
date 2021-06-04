@@ -6,6 +6,7 @@ module.exports = {
   name: 'killallv5',
   category: '☄️ | OVH Methods',
   description: 'start an KILLALLV5 attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

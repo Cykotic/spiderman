@@ -6,6 +6,7 @@ module.exports = {
   name: 'ipsec',
   category: '💎 | VIP Methods',
   description: 'start an ipsec attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

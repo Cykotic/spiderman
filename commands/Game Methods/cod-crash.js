@@ -6,6 +6,7 @@ module.exports = {
   name: 'cod-crash',
   category: '🎮 | Game Methods',
   description: 'start an cod-crash attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

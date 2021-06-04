@@ -6,6 +6,7 @@ module.exports = {
   name: 'backend',
   category: '⚡ | Layer 4 Basic',
   description: 'start an BACKEND attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

@@ -6,6 +6,7 @@ module.exports = {
   name: 'dvr',
   category: '💎 | VIP Methods',
   description: 'start an dvr attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

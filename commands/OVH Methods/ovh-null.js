@@ -6,7 +6,7 @@ module.exports = {
   name: 'ovh-null',
   category: '☄️ | OVH Methods',
   description: 'start an OVH-NULL attack',
-
+  channelOnly: true,
 
   /**
    * @param {Client} client

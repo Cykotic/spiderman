@@ -6,6 +6,7 @@ module.exports = {
   name: 'nfo-lag',
   category: '❄️ | NFO Methods',
   description: 'start an NFO-LAG attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

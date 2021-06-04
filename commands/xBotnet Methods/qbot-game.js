@@ -6,6 +6,7 @@ module.exports = {
   name: 'qbot-game',
   category: '✨ | Botnet Methods',
   description: 'start an qbot-game attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

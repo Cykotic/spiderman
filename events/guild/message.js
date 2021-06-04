@@ -1,4 +1,5 @@
 const { prefix } = require("../../config.json");
+const ee = require("../../config.json");
 const { Collection, MessageEmbed } = require('discord.js');
 // const Timeout = new Collection();
 // const ms = require('ms')
@@ -12,13 +13,8 @@ var pool = mysql.createPool({
 });
 module.exports = async (client, message) => {
 
-  /* mainly just for the memes */
-  if (message.content == "F") {
-    message.reply("has paid respects!");
-  }
-
   /* the prefix system along ith aliases, or what i like to call the prefix system */
-  if(message.author.bot) return;
+  if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
   if (!message.member) message.member = await message.guild.members.fetch(message);
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -28,18 +24,33 @@ module.exports = async (client, message) => {
   if (!command) command = client.commands.get(client.aliases.get(cmd));
   if (!command) return;
 
-  /* permission handler */
-  if (command.memberpermissions && !message.member.hasPermission(command.memberpermissions)) {
-    return message.channel.send
-      (
-        new MessageEmbed()
-          .setColor(0xff1100)
-          .setTimestamp()
-          .setFooter(message.author.tag, message.member.user.displayAvatarURL())
-          .setTitle("❌ Error | You are not allowed to run this command!")
+  /* enable to send the command in 1 channel */
+  if (command.channelOnly) {
+    if (message.channel.id != "850277879245701170") {
+      return message.reply(new MessageEmbed()
+        .setColor(ee.color)
+        .setTimestamp()
+        .setThumbnail(client.user.displayAvatarURL())
+        .setFooter(message.author.tag, message.member.user.displayAvatarURL())
+        .setTitle("❌ Error | You are not allowed to run this command here!")
       ).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
+    }
   }
 
 
-  if (command) command.run(client, message, args, pool)
+/* permission handler */
+if (command.memberpermissions && !message.member.hasPermission(command.memberpermissions)) {
+  return message.channel.send
+    (
+      new MessageEmbed()
+        .setColor(ee.color)
+        .setTimestamp()
+        .setThumbnail(client.user.displayAvatarURL())
+        .setFooter(message.author.tag, message.member.user.displayAvatarURL())
+        .setTitle("❌ Error | You are not allowed to run this command!")
+    ).then(msg => msg.delete({ timeout: 10000 }).catch(e => console.log(e.message)))
+}
+
+
+if (command) command.run(client, message, args, pool)
 }

@@ -6,6 +6,7 @@ module.exports = {
   name: 'rocket-league',
   category: '🎮 | Game Methods',
   description: 'start an ROCKET-LEAGUE attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

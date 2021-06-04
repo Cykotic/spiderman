@@ -6,6 +6,7 @@ module.exports = {
   name: 'mssql',
   category: '🎮 | Game Methods',
   description: 'start an MSSQL attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

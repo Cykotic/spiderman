@@ -6,6 +6,7 @@ module.exports = {
   name: 'fivemtcp',
   category: '❄️ | NFO Methods',
   description: 'start an FIVEM-TCP attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

@@ -6,6 +6,7 @@ module.exports = {
   name: 'fivemudp',
   category: '❄️ | NFO Methods',
   description: 'start an FIVEM-UDP attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

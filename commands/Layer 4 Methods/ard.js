@@ -6,6 +6,7 @@ module.exports = {
   name: 'ard',
   category: '⚡ | Layer 4 Basic',
   description: 'start an ARD attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

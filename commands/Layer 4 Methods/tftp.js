@@ -6,6 +6,7 @@ module.exports = {
   name: 'tftp',
   category: '⚡ | Layer 4 Basic',
   description: 'start an TFTP attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

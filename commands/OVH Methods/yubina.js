@@ -6,6 +6,7 @@ module.exports = {
   name: 'yubina',
   category: '☄️ | OVH Methods',
   description: 'start an YUBINA attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

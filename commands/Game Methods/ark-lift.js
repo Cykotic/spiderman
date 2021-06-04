@@ -6,6 +6,7 @@ module.exports = {
   name: 'ark-lift',
   category: '🎮 | Game Methods',
   description: 'start an ARK-LIFT attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

@@ -6,6 +6,7 @@ module.exports = {
   name: 'fortnite',
   category: '🎮 | Game Methods',
   description: 'start an FORTNITE attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

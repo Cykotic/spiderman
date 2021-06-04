@@ -6,6 +6,7 @@ module.exports = {
   name: 'syn-urg',
   category: '🔥 | TCP Methods',
   description: 'start an SYN-URG attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client

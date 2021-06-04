@@ -6,6 +6,7 @@ module.exports = {
   name: 'wra',
   category: '🎮 | Game Methods',
   description: 'start an WRA attack',
+  channelOnly: true,
 
   /**
    * @param {Client} client
